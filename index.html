@@ -28,40 +28,30 @@
       font-size: clamp(2rem, 8vw, 6rem);
       font-weight: 400;
       letter-spacing: 0.05em;
-      color: #111111;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
       cursor: default;
       user-select: none;
-      transition: color 0.2s ease;
       position: relative;
       background-clip: text;
       -webkit-background-clip: text;
-    }
-
-    h1.hovered {
-      color: transparent;
-      -webkit-text-fill-color: transparent;
+      background-image: radial-gradient(circle at 50% 50%, #00cfff, #0070ff, #0010cc);
     }
   </style>
 </head>
 <body>
 
-  <h1 id="name">jakewooll</h1>
+  <h1 id="name">jakewoollard.co.uk</h1>
 
   <script>
     const name = document.getElementById('name');
 
-    name.addEventListener('mousemove', (e) => {
+    document.addEventListener('mousemove', (e) => {
       const rect = name.getBoundingClientRect();
       const x = ((e.clientX - rect.left) / rect.width) * 100;
       const y = ((e.clientY - rect.top) / rect.height) * 100;
 
       name.style.backgroundImage = `radial-gradient(circle at ${x}% ${y}%, #00cfff, #0070ff, #0010cc)`;
-      name.classList.add('hovered');
-    });
-
-    name.addEventListener('mouseleave', () => {
-      name.classList.remove('hovered');
-      name.style.backgroundImage = 'none';
     });
   </script>
 
