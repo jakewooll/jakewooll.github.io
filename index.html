@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jake Woollard</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: clamp(2rem, 8vw, 6rem);
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      color: #111111;
+      cursor: default;
+      user-select: none;
+      transition: color 0.2s ease;
+      position: relative;
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+
+    h1.hovered {
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="name">Jake Woollard</h1>
+
+  <script>
+    const name = document.getElementById('name');
+
+    name.addEventListener('mousemove', (e) => {
+      const rect = name.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+      name.style.backgroundImage = `radial-gradient(circle at ${x}% ${y}%, #00cfff, #0070ff, #0010cc)`;
+      name.classList.add('hovered');
+    });
+
+    name.addEventListener('mouseleave', () => {
+      name.classList.remove('hovered');
+      name.style.backgroundImage = 'none';
+    });
+  </script>
+
+</body>
+</html>
