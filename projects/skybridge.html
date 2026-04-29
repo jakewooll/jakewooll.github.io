@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Smart Home Platform — Jake Woollard">
+  <title>Smart Home Platform — Jake Woollard</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="case-nav" role="navigation" aria-label="Page navigation">
+    <div class="container">
+      <div class="case-nav-inner">
+        <a href="../index.html" class="back-link">Back</a>
+        <a href="../index.html" class="nav-name">JW</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <article class="case-study" aria-labelledby="case-title">
+      <div class="container">
+
+        <header class="case-header">
+          <p class="case-category">Consumer Hardware · 2024</p>
+          <h1 class="case-title" id="case-title">Smart Home Platform</h1>
+          <p class="case-subtitle">Building a connected device ecosystem from industrial design constraints through app launch — and the product decisions that sit in between.</p>
+        </header>
+
+        <div class="case-body">
+
+          <section class="case-section" aria-labelledby="overview-label">
+            <p class="case-section-label" id="overview-label">Overview</p>
+            <p>
+              This was a two-year project to build a coherent connected home product range — three hardware SKUs sharing a common software platform. I joined when the hardware was already in tooling and the app was a blank Figma file. My job was to make sense of everything that sits between those two things.
+            </p>
+          </section>
+
+          <hr class="case-divider" aria-hidden="true">
+
+          <section class="case-section" aria-labelledby="problem-label">
+            <p class="case-section-label" id="problem-label">The Problem</p>
+            <h2>What needed solving</h2>
+            <p>
+              The hardware team had made good hardware. But each device had been specced independently — different engineers, different timelines, different assumptions about how users would set them up. By the time I arrived, we had three products that were physically incompatible in ways that weren't obvious until you tried to build the companion app.
+            </p>
+            <p>
+              The deeper problem: nobody owned the seam between the hardware and the software. Engineers cared about the device. The app team cared about the app. Users would only see the experience — and the experience was going to be incoherent.
+            </p>
+          </section>
+
+          <section class="case-section" aria-labelledby="role-label">
+            <p class="case-section-label" id="role-label">My Role</p>
+            <h2>What I did</h2>
+            <p>
+              I became the person who owned the seam. Concretely, that meant running weekly syncs between the hardware and software teams that hadn't previously talked to each other, writing a shared "platform spec" that both sides could design against, and making calls about which incompatibilities we'd live with versus fix before launch.
+            </p>
+            <p>
+              Some of those calls were genuinely hard. Fixing the Bluetooth inconsistency between Device 2 and Device 3 would have cost six weeks and a partial re-spin of the PCB. We decided to paper over it in software and be honest with users about the limitation. That was the right call, but it required convincing a hardware team that software could make it not matter — and then holding the software team to actually delivering that.
+            </p>
+          </section>
+
+          <section class="case-section" aria-labelledby="process-label">
+            <p class="case-section-label" id="process-label">Process</p>
+            <h2>How I approached it</h2>
+            <p>
+              The first thing I did was map the setup journey for all three devices simultaneously — every state, every failure mode, every moment where the app needed something from the firmware and the firmware might not give it. This produced a 12-page document that immediately became the source of truth for both teams.
+            </p>
+            <p>
+              Halfway through, we ran a round of unmoderated user testing on the setup flow and discovered that the two-step pairing process we'd assumed would be obvious was being abandoned by 40% of participants at step one. That was the pivot — we rebuilt the onboarding from scratch with a single-step flow, which required a firmware change we'd said was out of scope. I made the case and got it approved.
+            </p>
+          </section>
+
+          <section class="case-section" aria-labelledby="outcome-label">
+            <p class="case-section-label" id="outcome-label">Outcome</p>
+            <h2>What happened</h2>
+            <p>
+              The platform launched on schedule. Setup completion rate in the first month of live data was 78% — significantly above the 60% benchmark from comparable products. The Bluetooth workaround held; we had 0 critical bugs related to the cross-device incompatibility in the first 90 days.
+            </p>
+            <p>
+              The more durable outcome was the working relationship between the hardware and software teams. The joint reviews became a standing meeting that outlasted the project, which is the kind of thing that doesn't show up in a product metric but matters for the next thing.
+            </p>
+          </section>
+
+        </div>
+
+        <nav class="case-footer" aria-label="Project navigation">
+          <a href="supply-chain-tooling.html" class="next-link">
+            Next project →
+          </a>
+        </nav>
+
+      </div>
+    </article>
+  </main>
+
+  <script src="../script.js"></script>
+</body>
+</html>
